@@ -1,19 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Palette Generator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
     <h1>Color Palette Generator</h1>
-    <div id="color-picker">
-      <div id="color-box"></div>
-      <input type="color" id="color-input" />
-      <button onclick="chooseColor()">Choose Colour</button>
-      <div id="color-code"></div>
+    <p class="subtitle">Pick colors from anywhere on your screen</p>
+
+    <!-- Color Picker Section -->
+    <div class="picker-section">
+      <button id="eyedropper-btn" class="btn btn-primary">
+        <span class="icon">💧</span> Pick from Screen
+      </button>
+      <span class="divider">or</span>
+      <input type="color" id="color-input" value="#6366f1">
+      <button id="add-color-btn" class="btn btn-secondary">Add to Palette</button>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- Current Color Preview -->
+    <div id="current-color" class="color-preview">
+      <div id="color-box"></div>
+      <div class="color-formats">
+        <div class="format" data-format="hex">
+          <span class="label">HEX</span>
+          <span class="value" id="hex-value">#6366f1</span>
+          <button class="copy-btn" data-target="hex">Copy</button>
+        </div>
+        <div class="format" data-format="rgb">
+          <span class="label">RGB</span>
+          <span class="value" id="rgb-value">rgb(99, 102, 241)</span>
+          <button class="copy-btn" data-target="rgb">Copy</button>
+        </div>
+        <div class="format" data-format="hsl">
+          <span class="label">HSL</span>
+          <span class="value" id="hsl-value">hsl(239, 84%, 67%)</span>
+          <button class="copy-btn" data-target="hsl">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Palette -->
+    <div class="palette-section">
+      <div class="palette-header">
+        <h2>Saved Palette <span id="palette-count">(0)</span></h2>
+        <div class="palette-actions">
+          <button id="export-btn" class="btn btn-small">Export CSS</button>
+          <button id="clear-btn" class="btn btn-small btn-danger">Clear All</button>
+        </div>
+      </div>
+      <div id="palette" class="palette-grid">
+        <div class="empty-state">No colors saved yet. Pick some colors!</div>
+      </div>
+    </div>
+
+    <!-- Eyedropper API Support Notice -->
+    <div id="api-notice" class="notice hidden">
+      ⚠️ EyeDropper API not supported in this browser. Use Chrome/Edge for screen picking.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

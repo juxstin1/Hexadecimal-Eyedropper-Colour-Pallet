@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #8fd3f4; /* Lighter blue background color */
+  height: 100vh; /* Make sure the body fills the viewport */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #333; /* Darker text color for better readability */
+}
+
+#color-picker {
+  margin-top: 50px; /* Adjusted margin */
+}
+
+#color-box {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  border: 1px solid #333; /* Darker border color */
+  background-color: #fff; /* White background color */
+}
+
+#color-input {
+  margin-bottom: 20px;
+}
+
+#color-code {
+  color: #333; /* Darker text color */
+}
